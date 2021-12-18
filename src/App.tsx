@@ -11,7 +11,7 @@ function App() {
     <Fragment>
       <BarraNavegacion inicio='border-b-4 border-blue-400' miLista='' amigos='' />
       <main className="flex-1 lg:mt-20">
-        <section className="container px-4 mx-auto mt-8">
+        <section className="container px-10 mx-auto mt-8">
           <Filtro />
           <ListaSeries />
         </section>
