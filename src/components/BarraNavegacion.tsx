@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import logo from '../imagenes/logo.png';
 import { Opcion } from './Opcion';
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { NavLink, useMatch, useResolvedPath } from "react-router-dom";
 import type { LinkProps } from "react-router-dom";
 
 export function BarraNavegacion() {
@@ -36,13 +36,13 @@ function CustomLink({ children, to, ...props }: LinkProps) {
 
   return (
     <div>
-      <Link
-        style={{ textDecoration: match ? "underline" : "none" }}
+      <NavLink
+        className={match ? 'text-blue-300 border-b-4 border-blue-400 py-4 px-2 font-semibold' : 'text-gray-200 font-semibold hover:text-blue-400 py-4 px-2'}
         to={to}
         {...props}
       >
         {children}
-      </Link>
+      </NavLink>
     </div>
   );
 }
