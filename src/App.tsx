@@ -1,25 +1,47 @@
-import React, { Fragment } from 'react'
-import { isIntersectionTypeNode, OperationCanceledException } from 'typescript';
-import './App.css';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Routes, Route } from "react-router-dom";
+import axios from 'axios';
+import { Inicio } from './components/Inicio';
+import { MiLista } from './components/MiLista';
+import { Amigos } from './components/Amigos';
 import { BarraNavegacion } from './components/BarraNavegacion';
-import { Filtro } from './components/Filtro';
-import { ListaSeries } from './components/ListaSeries';
-import filtro from './imagenes/filter.svg';
 
 function App() {
+
+  const baseUrl = "http://localhost/flist/";
+  const [data, setData] = useState([]);
+
+  const peticionGet = async () => {
+    await axios.get(baseUrl)
+      .then(response => {
+        console.log(response.data);
+      })
+  }
+
+  useEffect(() => {
+    peticionGet();
+  }, [])
+
   return (
     <Fragment>
-      <BarraNavegacion inicio='border-b-4 border-blue-400' miLista='' amigos='' />
-      <main className="flex-1 lg:mt-20">
-        <section className="container px-10 mx-auto mt-8">
-          <Filtro />
-          <ListaSeries />
-        </section>
-      </main>
+      <BarraNavegacion />
+      <Routes>
+        <Route index element={<Inicio />} />
+        <Route path="inicio" element={<Inicio />} />
+        <Route path="miLista" element={<MiLista />} />
+        <Route path="amigos" element={<Amigos />} />
+        <Route path="*" element={<Inicio />} />
+      </Routes>
     </Fragment>
   );
 }
 
 export default App;
 
-
+function Home() {
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
+}

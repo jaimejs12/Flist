@@ -8,7 +8,7 @@ export function Filtro() {
           <h3 className="text-xl font-semibold text-gray-200">Listado completo de series</h3>
         </div>
       </div>
-      <div className="my-2 flex sm:flex-row flex-col">
+      <div className="my-2 flex sm:flex-row flex-col h-10">
         <div className="flex flex-row mb-1 sm:mb-0">
           <div className="relative">
             <select
@@ -47,7 +47,7 @@ export function Filtro() {
               </path>
             </svg>
           </span>
-          <input placeholder="Buscar" className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-gray-900 text-sm placeholder-gray-400 text-gray-700 focus:bg-gray-700 focus:placeholder-gray-600 focus:text-gray-200 focus:outline-none" />
+          <input placeholder="Buscar" className="h-10 appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-gray-900 text-sm placeholder-gray-400 text-gray-700 focus:bg-gray-700 focus:placeholder-gray-600 focus:text-gray-200 focus:outline-none" />
         </div>
       </div>
     </div>
