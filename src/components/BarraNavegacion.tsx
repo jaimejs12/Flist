@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import logo from '../imagenes/logo.png';
-import { Opcion } from './Opcion';
+import { InicioSesion } from './InicioSesion';
 import { NavLink, useMatch, useResolvedPath } from "react-router-dom";
 import type { LinkProps } from "react-router-dom";
 
@@ -21,7 +21,7 @@ export function BarraNavegacion() {
               </div>
             </div>
             <div className="flex items-center space-x-3">
-              <a href="" className="py-2 px-2 bg-transparent hover:bg-blue-400 text-blue-400 font-semibold hover:text-white border border-blue-400 hover:border-transparent rounded">Iniciar Sesión</a>
+              <InicioSesion />
             </div>
           </div>
         </div>
