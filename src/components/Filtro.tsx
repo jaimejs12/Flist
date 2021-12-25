@@ -38,7 +38,7 @@ export function Filtro() {
               </svg>
             </div>
           </div>
-        </div> 
+        </div>
         <div className="block relative">
           <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
             <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current text-gray-200">

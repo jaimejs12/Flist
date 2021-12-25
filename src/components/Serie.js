@@ -22,11 +22,13 @@ export function Serie(propiedades) {
   }
 
   claseNotaMedia = claseNotaMedia + ' absolute top-3 right-6 border-2 border-gray-200 rounded py-1 px-1 text-sm';
+  var servicio, direccion;
 
   const peticionGet = async () => {
     await axios.get(baseUrl)
       .then(response => {
         setData(response.data);
+        console.log(response.data);
       }).catch(error => {
         console.log(error);
       })
@@ -35,15 +37,12 @@ export function Serie(propiedades) {
   useEffect(async () => {
     await peticionGet();
   }, [])
- 
-  var servicio, direccion;
 
-  if(data.nombre == 'Netflix') {
+  if (data.nombre == 'Netflix') {
     servicio = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Netflix-new-icon.png/900px-Netflix-new-icon.png';
     direccion = 'https://Netflix.com';
   }
-
-  if(data.nombre == 'HBO') {
+  if (data.nombre == 'HBO') {
     servicio = 'https://i.pinimg.com/564x/d0/d4/fd/d0d4fdda32a2154f3c906529527dc306.jpg';
     direccion = 'https://play.hbomax.com/';
   }
